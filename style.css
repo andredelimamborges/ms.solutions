@@ -6,13 +6,33 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     background-color: #f4f1f1;
     color: #2C109C;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+.boas-vindas {
+    max-width: 800px;
+    margin: 40px auto 20px auto;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.boas-vindas h1 {
+    font-size: 2rem;
+    color: var(--text-color, #2C109C);
+    margin-bottom: 1rem;
+}
+
+.boas-vindas p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color, #000000);
+    margin-bottom: 1rem;
 }
 
 /* Header */
@@ -24,6 +44,7 @@ header {
     padding: 10px 20px;
     height: 100px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .left-design {
@@ -43,6 +64,11 @@ header {
 }
 
 /* Navbar Styles */
+nav {
+    display: flex;
+    align-items: center;
+}
+
 header ul {
     display: flex;
     align-items: center;
@@ -77,24 +103,11 @@ header ul {
     transform: scaleX(1);
 }
 
-#hire-me {
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    color: black;
-    border-radius: 5px;
-    padding: 0.2rem 0.5rem;
-    transition: all 0.6s ease;
-}
-
-#hire-me:hover {
-    background-color: transparent;
-    color: #fff;
-    padding: 0.5rem;
-}
-
-#hire-me i {
-    margin-right: 0.5rem;
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
 }
 
 /* Banner principal */
@@ -169,6 +182,7 @@ ul li {
 
 .diferencial-item {
     text-align: center;
+    padding: 20px;
 }
 
 .diferencial-item h3 {
@@ -183,18 +197,7 @@ ul li {
 
 .diferencial-item i {
     font-size: 30px;
-    color: #2C109C; /* Updated for consistency */
-}
-
-/* Mapa */
-.mapa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5% auto;
-    max-width: 100%;
-    max-height: 100%;
-    box-sizing: border-box;
+    color: #2C109C;
 }
 
 /* Footer */
@@ -226,47 +229,68 @@ footer p {
 }
 
 /* Responsividade */
+@media (max-width: 1024px) {
+    .diferenciais-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
+        padding: 10px 15px;
     }
 
-    .left-design {
-        width: 60px;
-        padding-right: 0;
-        margin-bottom: 10px;
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #2C109C;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
     }
 
     header ul {
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 1rem;
+        width: 100%;
     }
 
     .link {
-        font-size: 16px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
     }
 
-    #hire-me {
-        font-size: 16px;
+    .hero {
+        height: 500px;
     }
 
-    .topo-do-site {
-        padding: 50px 2%;
+    .hero h2 {
+        font-size: 2rem;
     }
 
-    .title {
-        font-size: 2.2rem;
+    .hero p {
+        font-size: 1.1rem;
     }
 
-    .intro-text {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 600px) {
     .txt-part {
+        margin: 5% 3%;
         padding: 20px;
     }
 
@@ -274,7 +298,66 @@ footer p {
         font-size: 1.5rem;
     }
 
-    .mapa {
-        margin: 2% auto;
+    .boas-vindas h1 {
+        font-size: 1.8rem;
+    }
+
+    .boas-vindas p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .diferenciais-section {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .txt-part {
+        margin: 5% 2%;
+        padding: 15px;
+    }
+
+    .highlight {
+        font-size: 1.3rem;
+    }
+
+    .boas-vindas h1 {
+        font-size: 1.6rem;
+    }
+
+    .boas-vindas p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-design {
+        width: 60px;
+        padding-right: 10px;
+    }
+
+    .hero {
+        height: 350px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .txt-part {
+        margin: 5% 1%;
     }
 }

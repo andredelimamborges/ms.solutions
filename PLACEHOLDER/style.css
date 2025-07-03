@@ -1,68 +1,200 @@
 * {
   box-sizing: border-box;
 }
+
 :root {
   --on: 0;
   --bg: hsl(calc(200 - (var(--on) * 160)), calc((20 + (var(--on) * 50)) * 1%), calc((20 + (var(--on) * 60)) * 1%));
+  --text-color: #ffffff;
   --cord: hsl(0, 0%, calc((60 - (var(--on) * 50)) * 1%));
   --stroke: hsl(0, 0%, calc((60 - (var(--on) * 50)) * 1%));
   --shine: hsla(0, 0%, 100%, calc(0.75 - (var(--on) * 0.5)));
   --cap: hsl(0, 0%, calc((40 + (var(--on) * 30)) * 1%));
   --filament: hsl(45, calc(var(--on) * 80%), calc((25 + (var(--on) * 75)) * 1%));
 }
+
+/* ======== BODY ======== */
 body {
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  padding-top: 120px; /* espaço para o header fixo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ======== HEADER ======== */
+header {
+  background-color: #2C109C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.left-design {
+  flex: 0 0 auto;
+  width: 80px;
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: var(--bg);
+  justify-content: flex-start;
+  padding-right: 20px;
 }
-.toggle-scene {
-  overflow: visible !important;
-  height: 50vmin;
+
+.left-design img {
+  height: 100%;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+/* ======== NAVBAR ======== */
+header ul {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.link::before {
+  content: "";
   position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: all 0.6s ease;
+  bottom: 0;
+  left: 0;
 }
+
+.link:hover::before {
+  transform: scaleX(1);
+}
+
+/* ======== MAIN / TEXTO ======== */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  text-align: center;
+  padding: 1rem;
+}
+
+main h1 {
+  font-size: 1.2rem;
+  max-width: 500px;
+  line-height: 1.5;
+  color: var(--text-color, #fff);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+}
+
+/* ======== LÂMPADA SVG ======== */
+.toggle-scene {
+  display: block;
+  position: relative;
+  margin-top: 10px;
+  max-width: 300px;
+  height: 50vmin;
+  overflow: visible !important;
+  z-index: 1;
+}
+
+/* ======== ELEMENTOS SVG ======== */
 .toggle-scene__cord {
   stroke: var(--cord);
   cursor: move;
 }
-.toggle-scene__cord:nth-of-type(1) {
-  display: none;
-}
+
+.toggle-scene__cord:nth-of-type(1),
 .toggle-scene__cord:nth-of-type(2),
 .toggle-scene__cord:nth-of-type(3),
 .toggle-scene__cord:nth-of-type(4),
 .toggle-scene__cord:nth-of-type(5) {
   display: none;
 }
+
 .toggle-scene__cord-end {
   stroke: var(--cord);
   fill: var(--cord);
 }
+
 .toggle-scene__dummy-cord {
   stroke-width: 6;
   stroke: var(--cord);
 }
+
 .bulb__filament {
   stroke: var(--filament);
 }
+
 .bulb__shine {
   stroke: var(--shine);
 }
+
 .bulb__flash {
   stroke: #f5e0a3;
   display: none;
 }
+
 .bulb__bulb {
   stroke: var(--stroke);
   fill: hsla(calc(180 - (95 * var(--on))), 80%, 80%, calc(0.1 + (0.4 * var(--on))));
 }
+
 .bulb__cap {
   fill: var(--cap);
 }
+
 .bulb__cap-shine {
   fill: var(--shine);
 }
+
 .bulb__cap-outline {
   stroke: var(--stroke);
+}
+
+/* ======== BOTÃO HIRE-ME (se usado) ======== */
+#hire-me {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  color: black;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  transition: all 0.6s ease;
+}
+
+#hire-me:hover {
+  background-color: transparent;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+#hire-me i {
+  margin-right: 0.5rem;
 }

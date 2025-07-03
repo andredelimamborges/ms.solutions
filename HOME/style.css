@@ -1,0 +1,280 @@
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f1f1;
+    color: #2C109C;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: #2C109C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+.left-design {
+    flex: 0 0 auto;
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 20px;
+}
+
+.left-design img {
+    height: 100%;
+    max-height: 80px; /* Adjust as needed for logo size */
+    object-fit: contain;
+}
+
+/* Navbar Styles */
+header ul {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: all 0.6s ease;
+    bottom: 0;
+    left: 0;
+}
+
+.link:hover::before {
+    transform: scaleX(1);
+}
+
+#hire-me {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    color: black;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    transition: all 0.6s ease;
+}
+
+#hire-me:hover {
+    background-color: transparent;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+#hire-me i {
+    margin-right: 0.5rem;
+}
+
+/* Banner principal */
+.hero {
+    background: linear-gradient(rgba(44, 16, 156, 0.7), rgba(252, 58, 82, 0.7)), url('hero-bg.jpg') center/cover;
+    height: 400px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.3em;
+}
+
+/* Content Sections */
+.txt-part {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 5%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.txt-part:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.highlight {
+    color: #250C85;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #2C109C;
+    padding-bottom: 10px;
+}
+
+.txt-part p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+ul {
+    margin-top: 15px;
+    padding-left: 20px;
+    list-style-type: disc;
+    box-sizing: border-box;
+}
+
+ul li {
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+/* Diferenciais Section */
+.diferenciais-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 50px;
+    background-color: #f5f5f5;
+}
+
+.diferencial-item {
+    text-align: center;
+}
+
+.diferencial-item h3 {
+    color: #2C109C;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.diferencial-item p {
+    color: #000000;
+}
+
+.diferencial-item i {
+    font-size: 30px;
+    color: #2C109C; /* Updated for consistency */
+}
+
+/* Mapa */
+.mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% auto;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+}
+
+/* Footer */
+footer {
+    background-color: #f4f1f1;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+    margin-top: auto;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer .social-links a {
+    color: black;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #2C109C;
+}
+
+footer p {
+    margin: 5px;
+    font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .left-design {
+        width: 60px;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    header ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .link {
+        font-size: 16px;
+    }
+
+    #hire-me {
+        font-size: 16px;
+    }
+
+    .topo-do-site {
+        padding: 50px 2%;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .txt-part {
+        padding: 20px;
+    }
+
+    .highlight {
+        font-size: 1.5rem;
+    }
+
+    .mapa {
+        margin: 2% auto;
+    }
+}

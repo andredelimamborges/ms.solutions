@@ -1,0 +1,184 @@
+/* CSS Responsívo*/
+@media screen and (max-width: 992px) {}
+
+/* CSS Responsívo*/
+@media screen and (max-width: 600px) {}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  color: #ffffff;
+}
+
+/* Garantir que o body ocupe a tela inteira */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main deve ocupar o espaço disponível */
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* procura > elemtentos */
+/* Estilo do cabecalho */
+/*. se refere a uma classe */
+/* # se refere a uma id*/
+
+body {
+  height: 100%;
+  background: #250C85;
+
+}
+
+
+/* Header */
+header {
+  background-color: #ffffff;
+  /* Cor de fundo igual ao body */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5px;
+  /* Ajuste de espaçamento para melhor layout */
+  max-width: 100%;
+  /* Garante que o header não exceda a largura da página */
+  box-sizing: border-box;
+  /* Inclui padding e border no cálculo da largura total */
+}
+
+/* Left Design (Triângulo) */
+.left-design {
+  width: 50px;
+  height: 50px;
+}
+
+/* Contador não aparece em tela menor que 720px */
+@media (max-width: 720px) {
+  .left-design {
+    display: none;
+  }
+
+}
+
+/* Right Content (Links) */
+.right-content {
+  display: flex;
+  align-items: center;
+}
+
+.right-content a {
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  /* Aumenta o tamanho do texto */
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header a {
+
+  text-decoration: None;
+  display: inline-block;
+  transition: .2s;
+  align-items: center;
+
+}
+
+header a:hover {
+  color: #2c109c;
+  ;
+  transform: scale(1.15);
+
+}
+
+
+section.topo-do-site {
+  padding: 100px 4%;
+
+}
+
+section.topo-do-site .flex {
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+
+.topo-do-site h1 {
+  color: #ffffff;
+  font-size: 42px;
+  line-height: 45px;
+}
+
+.txt-topo-site p {
+  color: #ffffff;
+  margin: 40px 0;
+}
+
+.txt-part p {
+  color: #ffffff;
+  margin: 40px 75px;
+}
+
+
+/* Footer */
+footer {
+  background-color: #000000;
+  /* Cor de fundo igual ao body e ao header */
+  color: #f4f1f1;
+  /* Cor do texto preta para consistência com o header */
+  text-align: center;
+  padding: 10px 0;
+  /* Padding reduzido para um footer mais compacto */
+  position: relative;
+  /* Usar relative para evitar problemas de sobreposição */
+  margin-top: auto;
+  /* Garante que o footer fique na parte inferior do container */
+  width: 100%;
+  /* Garante que o footer ocupe toda a largura disponível */
+  box-sizing: border-box;
+  /* Inclui padding e border no cálculo da largura total */
+}
+
+/* Ajuste da cor dos links sociais no footer */
+footer .social-links a {
+  color: black;
+  /* Cor dos ícones igual ao texto do footer */
+  margin: 0 10px;
+  font-size: 1.2em;
+  /* Ajustar o tamanho dos ícones para um tamanho menor, se necessário */
+  transition: color 0.3s ease;
+  /* Transição suave para a cor dos ícones */
+}
+
+footer .social-links a:hover {
+  color: #2C109C;
+  /* Cor dos ícones ao passar o mouse */
+}
+
+/* Ajustar o texto de direitos reservados */
+footer p {
+  margin-top: 25%;
+  margin: 0;
+  /* Remove a margem para o texto ficar mais próximo da parte inferior */
+  font-size: 0.9em;
+  /* Tamanho da fonte ligeiramente menor */
+}
